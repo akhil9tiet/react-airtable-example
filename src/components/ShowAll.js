@@ -1,24 +1,14 @@
 import React from "react";
-import {
-	FocusZone,
-	List,
-	DocumentCard,
-	DocumentCardActivity,
-	DocumentCardPreview,
-	DocumentCardTitle,
-	IDocumentCardPreviewProps,
-	ImageFit,
-	ThemeProvider,
-	initializeIcons,
-} from "@fluentui/react";
+import Deletebtn from "./Deletebtn";
 
 export default function ShowAll({ data }) {
 	// console.log(data[0].fields);
 	return (
-		<div className="container">
+		<div className='container'>
 			{(data || []).map((card) => (
 				<Card
 					key={card.id}
+          id={card.id}
 					profession={card.fields.Profession}
 					phone={card.fields.Contact}
 					name={card.fields.Name}
@@ -28,12 +18,11 @@ export default function ShowAll({ data }) {
 					startDate={card.fields.StartDate}
 				/>
 			))}
-			<p>SjpwA;ll</p>
 		</div>
 	);
 }
 
-const Card = ({ key, profession, phone, name, age, status, imgurl, startDate }) => {
+const Card = ({ key, id, profession, phone, name, age, status, imgurl, startDate }) => {
 	return (
 		<div className='card-continer'>
 			<div className='card-header'>
@@ -47,6 +36,7 @@ const Card = ({ key, profession, phone, name, age, status, imgurl, startDate }) 
 				<p>{status}</p>
 				<p>{startDate}</p>
 			</div>
+			<Deletebtn id={id} />
 		</div>
 	);
 };
