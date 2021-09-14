@@ -8,7 +8,7 @@ export default function ShowAll({ data }) {
 			{(data || []).map((card) => (
 				<Card
 					key={card.id}
-          id={card.id}
+					id={card.id}
 					profession={card.fields.Profession}
 					phone={card.fields.Contact}
 					name={card.fields.Name}
@@ -22,7 +22,7 @@ export default function ShowAll({ data }) {
 	);
 }
 
-const Card = ({ key, id, profession, phone, name, age, status, imgurl, startDate }) => {
+const Card = ({ id, profession, phone, name, age, status, imgurl, startDate }) => {
 	return (
 		<div className='card-continer'>
 			<div className='card-header'>
